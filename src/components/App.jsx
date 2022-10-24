@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { Section } from './Section/Section';
 import { Statistics } from './Statistics/Statistics';
@@ -6,7 +7,11 @@ import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Notification } from './Notification/Notification';
 
 export class App extends Component {
-  static propTypes = {};
+  static propTypes = {
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+  };
 
   state = { good: 0, neutral: 0, bad: 0 };
 
